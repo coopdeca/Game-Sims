@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #070a0d;
+  color: #f3f6f8;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+}
+
+main {
+  max-width: 1450px;
+  margin: auto;
+  padding: 0 32px;
+}
+
+.header {
+  height: 86px;
+  border-bottom: 1px solid #20262c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  background: #d8ff3e;
+  color: #050606;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.brand p {
+  margin: 5px 0 0;
+  color: #6f7a83;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.status {
+  color: #7c878f;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9cff28;
+  margin-right: 8px;
+  box-shadow: 0 0 12px #9cff28;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding: 75px 0 60px;
+  border-bottom: 1px solid #20262c;
+}
+
+.eyebrow {
+  color: #9cff28;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h2 {
+  font-size: clamp(48px, 7vw, 92px);
+  line-height: .91;
+  margin: 20px 0;
+  letter-spacing: -5px;
+}
+
+.hero h2 span {
+  color: #69737b;
+}
+
+.hero p {
+  max-width: 610px;
+  color: #8c969e;
+  line-height: 1.7;
+}
+
+.hero-stat {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  border-left: 1px solid #293038;
+  padding-left: 30px;
+}
+
+.hero-stat strong {
+  font-size: 70px;
+  color: #d8ff3e;
+  line-height: .8;
+}
+
+.hero-stat span {
+  color: #737e87;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+}
+
+.league-selector {
+  display: flex;
+  gap: 8px;
+  padding: 30px 0;
+}
+
+.league-button {
+  background: #11161a;
+  border: 1px solid #242c32;
+  color: #77818a;
+  padding: 14px 22px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.league-button.active {
+  background: #d8ff3e;
+  border-color: #d8ff3e;
+  color: #080a0b;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  margin: 8px 0 0;
+  font-size: 27px;
+}
+
+.game-count {
+  color: #68737c;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.matchup-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.matchup-card {
+  background: #0e1317;
+  border: 1px solid #20272d;
+  color: white;
+  text-align: left;
+  padding: 20px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.matchup-card:hover,
+.matchup-card.selected {
+  border-color: #d8ff3e;
+  transform: translateY(-2px);
+}
+
+.matchup-card.selected {
+  background: #11180c;
+}
+
+.matchup-top,
+.matchup-bottom {
+  display: flex;
+  justify-content: space-between;
+  color: #68737c;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.team-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+  gap: 15px;
+}
+
+.team-line div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.team-line strong {
+  font-size: 28px;
+}
+
+.team-line small {
+  color: #69747d;
+  font-size: 9px;
+}
+
+.matchup-bottom span:last-child {
+  color: #d8ff3e;
+}
+
+.simulation-section {
+  margin-top: 70px;
+}
+
+.simulation-panel {
+  background: #0d1216;
+  border: 1px solid #222a30;
+  padding: 30px;
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #222a30;
+}
+
+.panel-heading h2 {
+  font-size: 38px;
+  margin: 10px 0 0;
+}
+
+.panel-heading h2 span {
+  color: #555f67;
+}
+
+.simulate-button {
+  background: #d8ff3e;
+  color: #060707;
+  border: 0;
+  padding: 17px 25px;
+  font-weight: 900;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.simulate-button:disabled {
+  opacity: .5;
+}
+
+.empty-panel {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #68737c;
+}
+
+.empty-icon {
+  font-size: 50px;
+  color: #d8ff3e;
+}
+
+.empty-panel h2 {
+  color: white;
+  margin: 0;
+}
+
+.ready-box {
+  padding: 35px 0;
+  color: #89949c;
+}
+
+.ready-box strong {
+  color: white;
+  font-size: 20px;
+}
+
+.winner-display {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.win-team {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.win-team span {
+  color: #9ba4aa;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.win-team strong {
+  font-size: 72px;
+  color: #d8ff3e;
+}
+
+.win-team small {
+  color: #626d75;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.versus {
+  color: #4d565d;
+  font-size: 10px;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #222a30;
+}
+
+.score-grid > div {
+  background: #0a0e11;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.score-grid span,
+.score-grid small,
+.info-card span {
+  color: #68737c;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.score-grid strong {
+  font-size: 35px;
+}
+
+.analytics-section {
+  padding: 35px 0;
+}
+
+.analytics-section h3 {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8c969e;
+  margin-bottom: 25px;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.stat-number {
+  color: #6c777f;
+  font-weight: bold;
+}
+
+.stat-number:last-child {
+  text-align: right;
+}
+
+.stat-number.winner {
+  color: #d8ff3e;
+}
+
+.stat-middle {
+  text-align: center;
+}
+
+.stat-label {
+  color: #77828a;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.bar-background {
+  height: 5px;
+  background: #171d21;
+  display: flex;
+}
+
+.bar-away {
+  background: #d8ff3e;
+}
+
+.bar-home {
+  background: #55616a;
+}
+
+.secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.info-card {
+  background: #090d10
